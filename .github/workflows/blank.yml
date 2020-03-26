@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    # セルフホストランナーで動作させるための設定
+    runs-on: self-hosted
+    steps:
+
+    # リポジトリをチェックアウト
+    - uses: actions/checkout@v2
+
+    # リポジトリのルートディレクトリに設置された`test.bat`ファイルを`foo`, `bar`という引数で実行
+    - name: Run a bat file with arguments
+      run: ./test.bat foo bar
+
+    - name: deploy
+      run: echo deploy command here
