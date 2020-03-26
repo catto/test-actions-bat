@@ -18,10 +18,11 @@ jobs:
     - name: Run a bat file with arguments
       run: ./test.bat foo bar
     
-    - name: Run a bat file with entrypoint and args
-      with:
-        entrypoint: ./test.bat
-        args: foo bat
+    # 環境変数を設定する場合
+    - name: Run a bat file with arguments
+      run: ./test.bat foo bar
+      env:
+        FOO_ENV: bar
 
     - name: deploy
       run: echo deploy command here
