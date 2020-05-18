@@ -17,6 +17,7 @@ jobs:
     # リポジトリのルートディレクトリに設置された`test.bat`ファイルを`foo`, `bar`という引数で実行
     - name: Run a bat file with arguments
       run: ./test.bat foo bar
+      shell: 
     
     # 環境変数を設定する場合
     - name: Run a bat file with arguments and env
